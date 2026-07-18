@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Contact — Django Intern Blog{% endblock %}
+
+{% block breadcrumb %}
+<nav aria-label="breadcrumb" class="container">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Contact</li>
+    </ol>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <h1 class="mb-4">Contact Us</h1>
+        <p class="text-muted">Have a question? Send us a message and we'll get back to you.</p>
+
+        {# Simple contact form (UI scaffold; wired to email later). #}
+        <form method="post" action="{% url 'contact' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input type="text" name="name" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Message</label>
+                <textarea name="message" rows="5" class="form-control" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">
+                <i class="fa-solid fa-paper-plane"></i> Send Message
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}

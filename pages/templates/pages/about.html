@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}About — Django Intern Blog{% endblock %}
+
+{% block breadcrumb %}
+<nav aria-label="breadcrumb" class="container">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">About</li>
+    </ol>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <h1 class="mb-4">About This Project</h1>
+        <p>
+            <strong>Django Intern Blog</strong> is a learning-oriented blog platform
+            demonstrating Django best practices: class-based views, clean models,
+            migrations, the messages framework, responsive Bootstrap 5 UI, and more.
+        </p>
+        <p>It is structured into small, focused apps so it stays modular and easy to scale.</p>
+    </div>
+</div>
+{% endblock %}

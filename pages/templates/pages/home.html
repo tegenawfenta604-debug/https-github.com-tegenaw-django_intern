@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Home — Django Intern Blog{% endblock %}
+
+{% block breadcrumb %}{% endblock %}
+
+{% block content %}
+<div class="p-5 mb-4 bg-light rounded-3 text-center">
+    <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">Welcome to Django Intern Blog</h1>
+        <p class="fs-4">A clean, responsive blog built with Django &amp; Bootstrap 5.</p>
+        <a href="{% url 'blog_list' %}" class="btn btn-primary btn-lg">
+            <i class="fa-solid fa-book-open"></i> Read the Blog
+        </a>
+    </div>
+</div>
+{% endblock %}

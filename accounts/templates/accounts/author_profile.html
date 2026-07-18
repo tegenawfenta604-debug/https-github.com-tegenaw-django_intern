@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}{{ author.username }} — Author Profile{% endblock %}
+{% block content %}
+<div class="row">
+  <div class="col-lg-8 mx-auto text-center">
+    {% if author.profile.avatar %}
+      <img src="{{ author.profile.avatar.url }}" class="rounded-circle mb-3" width="120" height="120" alt="avatar">
+    {% else %}
+      <i class="fa-solid fa-circle-user fa-6x text-secondary mb-3"></i>
+    {% endif %}
+    <h1>{{ author.username }}</h1>
+    {% if author.profile.bio %}<p class="text-muted">{{ author.profile.bio }}</p>{% endif %}
+    {% if author.profile.website %}
+      <a href="{{ author.profile.website }}" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm">
+        <i class="fa-solid fa-globe"></i> Website
+      </a>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

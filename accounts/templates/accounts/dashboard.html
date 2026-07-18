@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Dashboard — Django Intern Blog{% endblock %}
+{% block content %}
+<div class="row">
+  <div class="col-lg-8 mx-auto text-center">
+    <h1 class="mb-3">Welcome, {{ user.username }}!</h1>
+    <p class="text-muted">This is your dashboard.</p>
+    <a href="{% url 'profile_update' %}" class="btn btn-outline-primary me-2">
+      <i class="fa-solid fa-user-pen"></i> Edit Profile
+    </a>
+    <a href="{% url 'author_profile' user.username %}" class="btn btn-outline-secondary">
+      <i class="fa-solid fa-id-badge"></i> Public Profile
+    </a>
+  </div>
+</div>
+{% endblock %}
